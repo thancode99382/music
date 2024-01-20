@@ -28,7 +28,7 @@ function Home() {
           Nổi Bật Dành Cho Bạn
         </div>
 
-        <div className={` grid ${isMobile?"grid-cols-1":"grid-cols-5"} grid-cols-5 gap-5`}>
+        <div className={` grid ${isMobile?"grid-cols-1":"grid-cols-5"}  `}>
           {ApiAlbums.alb.map((album) => (
             <CardPlayList
               key={album.id}
