@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useContext, useEffect, useState } from "react";
 import SearchContext from "../../layouts/components/Siderbar/SearchContext";
 function TbodyMusic({ song }) {
-  const { setSelectSong, selectSong } = useContext(SearchContext);
+  const { setSelectSong, selectSong ,isMobile } = useContext(SearchContext);
 
   const [playingSong, setPlayingSong] = useState(false);
   useEffect(() => {
@@ -32,7 +32,7 @@ function TbodyMusic({ song }) {
               <img className="w-10 rounded-md" src={song.img} alt="" />
             </div>
             <div>
-              <div className="text-white">{song.name}</div>
+              <div className={"text-white"}>{song.name}</div>
               <div className="text-[14px] ">{song.sing}</div>
             </div>
           </div>

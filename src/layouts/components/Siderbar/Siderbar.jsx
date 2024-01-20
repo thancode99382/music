@@ -20,14 +20,14 @@ function Siderbar() {
   };
 
   return (
-    <div className={` text-white ${isMobile ? "w-[60px]" : "w-[400px]"} `}>
+    <div className={` text-white ${isMobile ? "w-[200px]" : "w-[400px]"}  `}>
       <div
-        className={`font-bold text-[16px] ${isMobile?"p-1":"p-5"}  space-y-5 bg-[#121212] rounded-lg text-neutral-400`}
+        className={`font-bold text-[16px] ${isMobile?"p-5":"p-5"}  space-y-5 bg-[#121212] rounded-lg text-neutral-400`}
       >
         <NavLink to={config.routes.Home}>
           <div
             onClick={() => activeButton("home")}
-            className={`flex gap-6 items-center group ${
+            className={`flex  gap-6 items-center group ${
               selectButton === "home" ? "text-neutral-50" : ""
             }`}
           >
@@ -64,7 +64,7 @@ function Siderbar() {
         </div>
       </div>
       {/* */}
-      <div className="mt-2 bg-[#121212] h-[495px] font-bold text-[16px] p-5 space-y-5 rounded-lg  ">
+      <div className={`mt-2 bg-[#121212]  ${isMobile?"h-[60px]":"h-[495px]"}  font-bold text-[16px] p-5 space-y-5 rounded-lg`  }>
         <NavLink>
           <div
             onClick={() => activeButton("library")}

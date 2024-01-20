@@ -6,7 +6,7 @@ import { Search } from "@mui/icons-material";
 import { useContext } from "react";
 import SearchContext from "../Siderbar/SearchContext";
 function Nav() {
-  const { isShowSearch } = useContext(SearchContext);
+  const { isShowSearch ,isMobile } = useContext(SearchContext);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -34,7 +34,7 @@ function Nav() {
       } fixed h-[65px] w-[1110px] rounded-t-lg transition-all duration-1000 ease-in-out z-50 flex items-center justify-between pr-8 pl-8 text-white  `}
     >
       <div>
-        <div className={ `flex items-center w-[360px] rounded-full h-[48px] ${isShowSearch==='search'?"":"opacity-0"} transition-all duration-300 ease-in-out bg-neutral-800 group focus:ring-1 focus:ring-white hover:bg-neutral-700 pl-3 `}>
+        <div className={ `flex items-center ${isMobile?"w-[200px]":"w-[360px]"}  rounded-full h-[48px] ${isShowSearch==='search'?"":"opacity-0"} transition-all duration-300 ease-in-out bg-neutral-800 group focus:ring-1 focus:ring-white hover:bg-neutral-700 pl-3 `}>
           <Search />
           <input
             placeholder="Bạn muốn nghe gì "

@@ -11,7 +11,7 @@ function Home() {
         Soul Of The Forest
       </div>
 
-      <div className={` grid ${isMobile?"grid-cols-2":"grid-cols-5"}  gap-5`}>
+      <div className={` grid ${isMobile?"grid-cols-1":"grid-cols-5"}  gap-5`}>
         {soulOfTheForest.alb.map((album) => (
           <CardPlayList
             key={album.id}
@@ -28,7 +28,7 @@ function Home() {
           Nổi Bật Dành Cho Bạn
         </div>
 
-        <div className={` grid ${isMobile?"grid-cols-2":"grid-cols-5"} grid-cols-5 gap-5`}>
+        <div className={` grid ${isMobile?"grid-cols-1":"grid-cols-5"} grid-cols-5 gap-5`}>
           {ApiAlbums.alb.map((album) => (
             <CardPlayList
               key={album.id}

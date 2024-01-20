@@ -2,9 +2,11 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import PropTypes from "prop-types";
-
+import { useContext } from "react";
+import SearchContext from "../../layouts/components/Siderbar/SearchContext";
 function ContainerMusic({ children, currentAlbum }) {
   const { img, name, namesub ,sing } = currentAlbum;
+  const {isMobile} = useContext(SearchContext)
   return (
     <div className=" relative   ">
       <div
@@ -13,7 +15,7 @@ function ContainerMusic({ children, currentAlbum }) {
           backgroundImage: `url(${img})`,
         }}
       ></div>
-      <div className=" pl-5 pb-10 grid grid-cols-12 relative z-10 top-[80px] items-center gap-5 text-white bg-gradient-to-t from-black  to-transparent">
+      <div className={` pl-5 pb-10 grid grid-cols-12 relative z-10 top-[80px] items-center gap-5 text-white bg-gradient-to-t ${isMobile?"h-[150px]":""}  from-black  to-transparent`}>
         <div className="col-span-3">
           <img
             className="w-[230] h-[230] rounded-lg shadow-black shadow-xl
@@ -23,9 +25,9 @@ function ContainerMusic({ children, currentAlbum }) {
           />
         </div>
         <div className="col-span-9 space-y-7 font-bold">
-          <div className="text-sm "> Đĩa đơn</div>
-          <div className=" text-5xl "> {name} </div>
-          <div className="text-sm "> {sing||namesub} </div>
+          <div className={` ${isMobile?"text-xs":"text-sm"} `}> Đĩa đơn</div>
+          <div className={` ${isMobile?"text-base":"text-5xl"} `}> {name} </div>
+          <div className={` ${isMobile?"text-xs":"text-sm"} `}> {sing||namesub} </div>
         </div>
       </div>
       {/* danh sách album  */}
