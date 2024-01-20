@@ -134,7 +134,7 @@ function Playingbar() {
 
   return (
 
-    <div className={` h-[72px]  pt-5  text-white ${isMobile?" ":"justify-between flex"}  items-center `}>
+    <div className={`   pt-5  text-white ${isMobile?"h-[213px] ":"justify-between flex h-[72px] "}  items-center `}>
       <audio ref={audioRef} src={selectSong.audio} type="audio/mpeg" />
 
       <div className="flex gap-5 items-center ">
@@ -167,7 +167,7 @@ function Playingbar() {
         </div>
       </div>
       <div>
-        <div className={`flex justify-center items-center ${isMobile?"hidden":""} gap-4 text-neutral-500`}>
+        <div className={`flex justify-center items-center  gap-4 text-neutral-500`}>
           <button>
             <ShuffleIcon className="hover:text-white" onClick={RandomSong} />
           </button>

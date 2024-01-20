@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => {
   }
 
 
-  if (command != 'serve') {
+  if (command !== 'serve') {
     config.base = '/music/'
   }
 

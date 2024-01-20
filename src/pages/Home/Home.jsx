@@ -1,14 +1,17 @@
 import CardPlayList from "../../components/CardPlayList";
 import ApiAlbums from "../../utils/Api/ApiAlbum";
 import soulOfTheForest from "../../utils/Api/soulOfTheForest/soulOfTheForest";
+import { useContext } from "react";
+import SearchContext from "../../layouts/components/Siderbar/SearchContext";
 function Home() {
+  const { isMobile } = useContext(SearchContext);
   return (
     <div className="mt-14  p-5 ">
       <div className="text-[24px] font-bold text-white mb-5  ">
         Soul Of The Forest
       </div>
 
-      <div className=" grid grid-cols-5 gap-5">
+      <div className={` grid ${isMobile?"grid-cols-2":"grid-cols-5"}  gap-5`}>
         {soulOfTheForest.alb.map((album) => (
           <CardPlayList
             key={album.id}
@@ -21,11 +24,11 @@ function Home() {
         ))}
       </div>
       <div className="mt-5">
-        <div className="text-[24px] font-bold text-white mb-5  ">
+        <div className="text-[24px]  font-bold text-white mb-5  ">
           Nổi Bật Dành Cho Bạn
         </div>
 
-        <div className=" grid grid-cols-5 gap-5">
+        <div className={` grid ${isMobile?"grid-cols-2":"grid-cols-5"} grid-cols-5 gap-5`}>
           {ApiAlbums.alb.map((album) => (
             <CardPlayList
               key={album.id}
