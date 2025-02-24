@@ -8,7 +8,7 @@ function ContainerMusic({ children, currentAlbum }) {
   const { img, name, namesub ,sing } = currentAlbum;
   const {isMobile} = useContext(SearchContext)
   return (
-    <div className=" relative   ">
+    <div className="relative ">
       <div
         className="absolute inset-0 bg-cover blur-3xl h-[500px]   bg-no-repeat   "
         style={{
@@ -24,7 +24,7 @@ function ContainerMusic({ children, currentAlbum }) {
             alt=""
           />
         </div>
-        <div className="col-span-9 space-y-7 font-bold">
+        <div className="col-span-9 font-bold space-y-7">
           <div className={` ${isMobile?"text-xs":"text-sm"} `}> Đĩa đơn</div>
           <div className={` ${isMobile?"text-base":"text-5xl"} `}> {name} </div>
           <div className={` ${isMobile?"text-xs":"text-sm"} `}> {sing||namesub} </div>
@@ -32,8 +32,8 @@ function ContainerMusic({ children, currentAlbum }) {
       </div>
       {/* danh sách album  */}
       <div className="    relative top-[80px] bg-gradient-to-t from-black  to-transparent min-h-screen ">
-        <div className=" flex items-center justify-between text-neutral-400 font-bold px-4 py-4">
-          <div className="flex gap-8 items-center   ">
+        <div className="flex items-center justify-between px-4 py-4 font-bold text-neutral-400">
+          <div className="flex items-center gap-8 ">
             <button>
               <PlayCircleIcon
                 className="text-green-500"
@@ -43,7 +43,7 @@ function ContainerMusic({ children, currentAlbum }) {
             <button>
               <FavoriteBorderIcon
                 sx={{ fontSize: "40px" }}
-                className="hover:text-white  "
+                className="hover:text-white "
               />
             </button>
 
@@ -61,7 +61,7 @@ function ContainerMusic({ children, currentAlbum }) {
 
         {/* list */}
         <div>
-          <div className="w-full  text-left">{children}</div>
+          <div className="w-full text-left">{children}</div>
         </div>
       </div>
     </div>

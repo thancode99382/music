@@ -134,10 +134,10 @@ function Playingbar() {
 
   return (
 
-    <div className={`   pt-5  text-white ${isMobile?"h-[213px] ":"justify-between flex h-[72px] "}  items-center `}>
+    <div className={`  pt-5  text-white ${isMobile?"h-[213px] ":"justify-between flex  "}  items-center `}>
       <audio ref={audioRef} src={selectSong.audio} type="audio/mpeg" />
 
-      <div className="flex gap-5 items-center ">
+      <div className="flex items-center gap-5 ">
         <Link
           onClick={() => {
             const scrolledPosition = document.querySelector(".scrollChange");
@@ -148,7 +148,7 @@ function Playingbar() {
         >
           <div>
             <img
-              className=" bg-blackh-[56px] w-[56px] rounded-lg"
+              className=" bg-black h-[56px] w-[56px] rounded-lg"
               src={selectSong.img}
               alt=""
             />
@@ -177,7 +177,7 @@ function Playingbar() {
 
           <button
             onClick={handlePlay}
-            className="bg-white text-black p-1 rounded-full"
+            className="p-1 text-black bg-white rounded-full"
           >
             {isPlay ? <PauseRounded /> : <PlayArrowRounded />}
           </button>
@@ -224,7 +224,7 @@ function Playingbar() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-2 pr-10">
+      <div className="flex items-center justify-center gap-2 pr-10">
         <Tooltip title="Danh sách nhạc " placement="top">
           <button>
             <PlaylistPlayIcon />

@@ -7,21 +7,24 @@ import SearchContext from "../components/Siderbar/SearchContext";
 function Defaultlayout({ children }) {
   const { isMobile } = useContext(SearchContext);
   return (
-    <div className="bg-black  p-[10px] font-font    ">
-      <div
-        className={`grid grid-cols-12 ${isMobile?"":"gap-32"}   `}
-      >
-        <div className={` ${isMobile?"col-span-2":"col-span-3"} `}>
-          <Siderbar />
-        </div>
-        <div className={` ${isMobile?"col-span-10":"col-span-9"} `}>
-          <Main> {children}</Main>
-        </div>
+    <div className="relative h-screen p-10 overflow-hidden bg-black font-font">
+    <div className={`grid grid-cols-12 ${isMobile ? "" : "gap-20"}`}>
+      {/* Sidebar */}
+      <div className="col-span-4">
+        <Siderbar />
       </div>
-      <div className="">
-        <Playingbar />
+
+      {/* Main Content */}
+      <div className="col-span-8 h-[calc(100vh-9rem)] overflow-y-auto bg-gradient-to-b from-[#222222] to-[#121212] rounded-lg">
+        <Main>{children}</Main>
       </div>
     </div>
+
+    {/* Playing Bar */}
+    <div className="absolute left-0 right-0 bottom-2">
+      <Playingbar />
+    </div>
+  </div>
   );
 }
 Defaultlayout.propTypes = {

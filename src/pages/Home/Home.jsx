@@ -6,7 +6,7 @@ import SearchContext from "../../layouts/components/Siderbar/SearchContext";
 function Home() {
   const { isMobile } = useContext(SearchContext);
   return (
-    <div className="mt-14  p-5 ">
+    <div className="p-5 mt-14">
       <div className="text-[24px] font-bold text-white mb-5  ">
         Soul Of The Forest
       </div>
@@ -39,7 +39,7 @@ function Home() {
               songs={album.songs}
             />
           ))}
-        </div>
+        </div> 
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ function CardPlayList({ id, name, img, namesub, songs }) {
   };
 
   return (
-    <Link className="text-white  bg-neutral-900 inline-block p-5 space-y-3 rounded-lg relative hover:bg-neutral-800 transition-all duration-200 ease-in-out cursor-pointer  " onClick={handleAlbum} key={id} to={`${config.routes.Album}/${name}`}>
+    <Link className="relative inline-block p-5 space-y-3 text-white transition-all duration-200 ease-in-out rounded-lg cursor-pointer bg-neutral-900 hover:bg-neutral-800 " onClick={handleAlbum} key={id} to={`${config.routes.Album}/${name}`}>
       <div
         onMouseEnter={() => setIsShow(true)}
         onMouseLeave={() => setIsShow(false)}
@@ -27,7 +27,7 @@ function CardPlayList({ id, name, img, namesub, songs }) {
           <img
             src={img}
             alt="Makingmyway"
-            className="w-[160px] h-[160px] rounded-lg shadow-lg "
+            className="w-[160px]  rounded-lg shadow-lg "
           />
 
           <div
@@ -41,7 +41,7 @@ function CardPlayList({ id, name, img, namesub, songs }) {
           </div>
         </div>
         <div>
-          <div className="space-y-2 mt-2">
+          <div className="mt-2 space-y-2">
             <div className="font-semibold text-[16px] overflow-hidden whitespace-nowrap overflow-ellipsis "> {name}</div>
             <div className="text-[#B3B3B3] font-semibold text-[14px]">
               {namesub}
