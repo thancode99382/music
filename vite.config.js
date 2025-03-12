@@ -10,12 +10,12 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    // Optimize for deployment but don't break the build
+    // Use safer options for deployment
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: import.meta.env.PROD, // Only drop console in production
-        passes: 2,
+        // Don't use environment variables here
+        drop_console: false,
       },
     },
     rollupOptions: {
