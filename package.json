@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prebuild": "npx update-browserslist-db@latest"
+    "prebuild": "npx update-browserslist-db@latest",
+    "vercel-build": "vite build",
+    "start": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

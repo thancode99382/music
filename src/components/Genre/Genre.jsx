@@ -1,21 +1,32 @@
 import { useContext } from "react";
 import SearchContext from "../../layouts/components/Siderbar/SearchContext";
-function Genre({ id, genre, bg,img }) {
+import PropTypes from "prop-types";
 
-  const{isMobile} = useContext(SearchContext)
+function Genre({ id, genre, bg, img }) {
+  const { isMobile } = useContext(SearchContext);
+  
   return (
     <div
       key={id}
-      className={`  ${isMobile?"":"w-[200px] h-[200px] "}  rounded-lg overflow-hidden p-5 relative`} style={{backgroundColor:`${bg}`}}
+      className={`rounded-lg overflow-hidden p-2 sm:p-3 md:p-5 relative h-[100px] sm:h-[150px] md:h-[200px]`} 
+      style={{ backgroundColor: `${bg}` }}
     >
-      <div className="text-[24px] font-bold text-white"> {genre} </div>
+      <div className="text-base sm:text-xl md:text-[24px] font-bold text-white">{genre}</div>
       <img
-        className=" absolute  bottom-[-20px] right-[-20px] w-[130px] h-[130px] rotate-45"
+        className="absolute bottom-[-20px] right-[-20px] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[130px] md:h-[130px] rotate-45 object-cover"
         src={img}
-        alt=""
+        alt={genre}
+        onError={(e) => {e.target.src = "https://via.placeholder.com/130"}}
       />
     </div>
   );
 }
+
+Genre.propTypes = {
+  id: PropTypes.any.isRequired,
+  genre: PropTypes.string.isRequired,
+  bg: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+};
 
 export default Genre;
