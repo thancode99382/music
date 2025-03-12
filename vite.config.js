@@ -10,14 +10,8 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    // Use safer options for deployment
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        // Don't use environment variables here
-        drop_console: false,
-      },
-    },
+    // Use esbuild for minification as a fallback option if terser has issues
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
